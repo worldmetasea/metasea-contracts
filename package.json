@@ -1,0 +1,26 @@
+{
+  "name": "metasea-contracts",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.3.3"
+  },
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^1.7.0",
+    "dotenv": "^10.0.0",
+    "sol-merger": "^3.1.0",
+    "solidity-coverage": "^0.7.17",
+    "truffle": "^5.4.22",
+    "truffle-contract-size": "^2.0.1"
+  },
+  "scripts": {
+    "merge-token-contract": "sol-merger \"./contracts/MetaSea.sol\" merged-contracts",
+    "merge-vesting-contract": "sol-merger \"./contracts/TokensVesting.sol\" merged-contracts",
+    "merge-tokens-sale": "sol-merger \"./contracts/TokensSale.sol\" merged-contracts",
+    "compile": "truffle compile",
+    "deploy-token-testnet": "truffle migrate --network bscTestnet -f 1 --to 1",
+    "deploy-tokens-vesting-testnet": "truffle migrate --network bscTestnet -f 2 --to 2",
+    "deploy-tokens-sale-testnet": "truffle migrate --network bscTestnet -f 3 --to 3",
+    "check-contract-size": "truffle run contract-size"
+  }
+}
